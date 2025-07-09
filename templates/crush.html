@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Say Yes? 💖</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>{{ crush }}, {{ sender }} wants to go on a date with you 💌</h1>
+  <div class="buttons">
+    <button onclick="respond('Yes')">Yes</button>
+    <button onclick="respond('No')">No</button>
+  </div>
+
+  <script>
+    function respond(choice) {
+      fetch(`/respond/{{ id }}/${choice}`, { method: "POST" })
+        .then(res => res.json())
+        .then(data => {
+          if (data.response === "Yes") {
+            alert("Aww 🥰 They said yes!");
+          } else {
+            alert("Maybe next time 😅");
+          }
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send a Love Request 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Create Your Love Link 💘</h1>
+  <form id="loveForm">
+    <input type="text" name="sender" placeholder="Your Name" required>
+    <input type="text" name="crush" placeholder="Crush's Name" required>
+    <input type="text" name="phone" placeholder="Your Phone Number" required>
+    <button type="submit">Generate Love Link</button>
+  </form>
+  <div class="message" id="responseMessage"></div>
+  <script src="{{ url_for('static', filename='form.js') }}"></script>
+</body>
+</html>
